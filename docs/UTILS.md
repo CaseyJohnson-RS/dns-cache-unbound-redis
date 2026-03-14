@@ -185,3 +185,10 @@ sudo systemctl disable unbound
 > ```bash
 > sudo /usr/local/sbin/unbound -c /usr/local/etc/unbound/unbound.conf
 > ```
+
+
+# TODO
+
+Добавить описание команд
+
+1. dig yandex.ru A +norecurse @ns1.yandex.ru
