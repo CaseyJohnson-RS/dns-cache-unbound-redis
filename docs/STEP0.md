@@ -10,7 +10,7 @@
 > [Ссылка на страницу с образом](https://www.linuxvmimages.com/images/ubuntuserver-2204/)
 
 <div align="center">
-  <img src="assets/images/image.png" width="50%" />
+  <img src="assets/images/STEP0_1.png" width="50%" />
 </div>
 
 ## Установка Unbound и утилит
@@ -33,7 +33,7 @@ sudo systemctl status unbound
 ```
 
 <div align="center">
-  <img src="assets/images/image1.png" width="50%" />
+  <img src="assets/images/STEP0_2.png" width="50%" />
 </div>
 
 
@@ -54,5 +54,5 @@ dig @127.0.0.1 yandex.ru A
 ```
 
 <div align="center">
-  <img src="assets/images/image2.png" width="50%" />
+  <img src="assets/images/STEP0_3.png" width="50%" />
 </div>
