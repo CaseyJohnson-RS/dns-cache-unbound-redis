@@ -7,9 +7,11 @@
  - Проверяем сетевой адаптер NAT
  - После установки выполняем `sudo apt update && sudo apt upgrade -y`
 
-> [Сылка на страницу с образом](https://www.linuxvmimages.com/images/ubuntuserver-2204/)
+> [Ссылка на страницу с образом](https://www.linuxvmimages.com/images/ubuntuserver-2204/)
 
-<img src="assets/images/image.png" width="35%" />
+<div align="center">
+  <img src="assets/images/image.png" width="50%" />
+</div>
 
 ## Установка Unbound и утилит
 
@@ -30,7 +32,10 @@ sudo apt install -y unbound unbound-host dnsutils redis-server
 sudo systemctl status unbound
 ```
 
-<img src="assets/images/image1.png" width="35%" />
+<div align="center">
+  <img src="assets/images/image1.png" width="50%" />
+</div>
+
 
 
 ## Небольшая настройка
@@ -48,4 +53,6 @@ sudo unbound-control reload
 dig @127.0.0.1 yandex.ru A
 ```
 
-<img src="assets/images/image3.png" width="35%" />
+<div align="center">
+  <img src="assets/images/image2.png" width="50%" />
+</div>
