@@ -43,6 +43,11 @@ sudo systemctl restart unbound
 sudo unbound-control dump_cache | grep yandex
 ```
 
+<div align="center">
+  <img src="assets/images/STEP1_1G_3.png" width="50%" />
+</div>
+
+
 Вывод пустой — кэш очищен, несмотря на то что TTL ещё не истёк.
 
 ## Шаг 3. Подтверждение через повторный запрос
@@ -54,5 +59,5 @@ dig @127.0.0.1 yandex.ru A
 `Query time` теперь **не равен 0 мс** — Unbound снова обращается к авторитетному серверу, кэш пуст.
 
 <div align="center">
-  <img src="assets/images/STEP1_1G_3.png" width="50%" />
+  <img src="assets/images/STEP1_1G_4.png" width="50%" />
 </div>
