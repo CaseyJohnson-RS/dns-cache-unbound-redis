@@ -111,14 +111,19 @@ server:
     chroot: ""
     module-config: "validator cachedb iterator"
 
+remote-control:
+    control-enable: yes
+
 cachedb:
     backend: "redis"
     redis-server-host: 127.0.0.1
     redis-server-port: 6379
-    redis-expire-records: yes
+    redis-expire-records: no
 ```
 
 > **`chroot: ""`** — явно отключает chroot-изоляцию. Без этой строки Unbound ищет все файлы конфигурации (в том числе `root.key`) внутри chroot-директории, скомпилированной в бинарник по умолчанию. Это приводит к ошибке `does not exist in chrootdir` при проверке конфига. Явное указание пустого значения гарантирует корректную работу независимо от того, с каким дефолтом собран бинарник.
+
+> **`remote-control: control-enable: yes`** — разрешает управление Unbound через `unbound-control`. При сборке из исходников эта секция по умолчанию отсутствует в конфиге, из-за чего `unbound-control` завершается ошибкой `Connection refused`. Без этого флага команды `flush`, `dump_cache` и `flush_zone` работать не будут.
 
 > **`module-config`:** `cachedb` должен стоять между `validator` и `iterator`. Порядок модулей имеет значение.
 

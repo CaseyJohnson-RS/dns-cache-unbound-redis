@@ -44,7 +44,7 @@ sudo unbound-control dump_cache | grep yandex
 ```
 
 <div align="center">
-  <img src="assets/images/STEP1_1G_3.png" width="50%" />
+  <img src="assets/images/STEP1_1G_2.png" width="50%" />
 </div>
 
 

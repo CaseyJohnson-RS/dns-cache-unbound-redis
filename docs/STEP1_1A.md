@@ -44,19 +44,19 @@ sudo unbound-control dump_cache | grep yandex
 
 ## Шаг 4. Ожидание истечения TTL
 
-Ждём, пока TTL истечёт (или принудительно сбросим кэш для демонстрации):
+Ждём 600 секунд — время жизни записи в кэше:
 
 ```bash
-sudo unbound-control flush yandex.ru
+sleep 600
 ```
 
-Проверяем, что запись удалена из кэша:
+После истечения TTL проверяем, что запись пропала из кэша сама:
 
 ```bash
 sudo unbound-control dump_cache | grep yandex
 ```
 
-Вывод должен быть пустым.
+Вывод пустой — Unbound автоматически удалил запись по истечении TTL.
 
 <div align="center">
   <img src="assets/images/STEP1_1A_4.png" width="50%" />
@@ -68,10 +68,8 @@ sudo unbound-control dump_cache | grep yandex
 dig @127.0.0.1 yandex.ru A
 ```
 
-Теперь Unbound снова выполняет рекурсивный запрос к авторитетному серверу — TTL в ответе будет исходным (не уменьшенным).
+Теперь Unbound снова выполняет рекурсивный запрос к авторитетному серверу — TTL в ответе исходный (не уменьшенный), в данном случае 600 секунд.
 
 <div align="center">
   <img src="assets/images/STEP1_1A_5.png" width="50%" />
 </div>
-
-Мы видим, что начальный TTL для всех записей равен 600 секунд.
