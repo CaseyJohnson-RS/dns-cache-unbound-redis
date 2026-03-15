@@ -1,0 +1,7 @@
+title: Кэширование DNS (Unbound + Redis)
+description: Практическое руководство по кейсу конкурса «Твой проект» 2025/2026
+theme: minima
+
+markdown: kramdown
+kramdown:
+  input: GFM

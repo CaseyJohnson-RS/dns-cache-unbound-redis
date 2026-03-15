@@ -30,7 +30,7 @@ dig @127.0.0.1 yandex.ru A +short
 dig @127.0.0.1 iana.org A +dnssec
 
 # Трассировка рекурсивного поиска (корень → TLD → авторитетный сервер)
-dig @127.0.0.1 iana.org A +trace
+dig @8.8.8.8 iana.org A +trace
 
 # Другие типы записей
 dig @127.0.0.1 iana.org AAAA   # IPv6
@@ -91,7 +91,6 @@ sudo unbound-control stats_noreset
 ### Конфиг Unbound
 
 Основной файл конфига: `/etc/unbound/unbound.conf`
-(При сборке из исходников: `/usr/local/etc/unbound/unbound.conf`)
 
 Структура:
 ```yaml
@@ -121,9 +120,6 @@ redis-cli ping           # → PONG
 
 # Посмотреть все ключи в БД
 redis-cli keys '*'
-
-# Найти ключи, связанные с конкретным доменом
-redis-cli keys '*yandex*'
 
 # Получить значение по ключу (бинарные данные DNS-записи)
 redis-cli get "<ключ>"
@@ -181,14 +177,3 @@ sudo systemctl enable unbound
 sudo systemctl disable unbound
 ```
 
-> При работе с **Unbound из исходников** (`/usr/local/sbin/unbound`) службы systemctl не применяются — запуск вручную:
-> ```bash
-> sudo /usr/local/sbin/unbound -c /usr/local/etc/unbound/unbound.conf
-> ```
-
-
-# TODO
-
-Добавить описание команд
-
-1. dig yandex.ru A +norecurse @ns1.yandex.ru

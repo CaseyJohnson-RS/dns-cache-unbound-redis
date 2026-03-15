@@ -59,5 +59,5 @@ dig @127.0.0.1 yandex.ru A
 `Query time` теперь **не равен 0 мс** — Unbound снова обращается к авторитетному серверу, кэш пуст.
 
 <div align="center">
-  <img src="assets/images/STEP1_1G_4.png" width="50%" />
+  <img src="assets/images/STEP1_1G_3.png" width="50%" />
 </div>
