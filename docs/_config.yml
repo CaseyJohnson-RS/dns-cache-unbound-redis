@@ -1,6 +1,6 @@
 title: Кэширование DNS (Unbound + Redis)
 description: Практическое руководство по кейсу конкурса «Твой проект» 2025/2026
-theme: cayman
+theme: jekyll-theme-cayman
 
 markdown: kramdown
 kramdown:
